@@ -4,68 +4,67 @@ import { FaGithub } from "react-icons/fa";
 
 const projectsData = [
   {
-    title: "NearBuy - Local E-commerce Platform",
-    description: "Developed a MERN stack application with TailwindCSS connecting local buyers and vendors. Features include products searching, location based search, product listings, and  nearest shops results.",
-    technologies: ["React.js", "Node.js", "MongoDB", "Express", "TailwindCSS", "JWT Auth"],
+    title: "AdGenie",
+    tag: "Final Year Project",
+    description: "End-to-end AI advertisement platform connecting a React frontend, Node.js APIs, and a FastAPI PyTorch inference service for prompt-driven ad generation. Presented at Namal Ideathon and Innovative Pakistan 2026.",
+    technologies: ["React.js", "Node.js", "FastAPI", "MongoDB", "PyTorch", "LLMs"],
+    githubLink: "",
+    imageUrl: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+  },
+  {
+    title: "SoulPlus AI",
+    tag: "Production",
+    description: "Production AI assistant with LangGraph multi-step reasoning, tool orchestration, and RAG over a Supabase BaaS PostgreSQL vector store. Built the document pipeline that processed 100+ PDF and DOCX files for the agent knowledge base.",
+    technologies: ["LangGraph", "LangChain", "RAG", "FastAPI", "Supabase (BaaS)", "pgvector"],
+    githubLink: "",
+    imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+  },
+  {
+    title: "NearBuy",
+    tag: "Marketplace",
+    description: "MERN marketplace with geolocation-based vendor discovery, filtering, and a responsive storefront that connects local buyers with nearby shops and services.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
     githubLink: "https://github.com/aqeelabbaskhan41/NearBuy",
     imageUrl: "https://images.pexels.com/photos/5632397/pexels-photo-5632397.jpeg"
   },
   {
-  "title": "MrDresser - Men's Fashion Platform (Software Engineering Project)",
-  "description": "Comprehensive software engineering documentation and system design for a men's fashion platform. Created complete SRS, design documents, UML diagrams, and Figma prototypes following SDLC methodologies.",
-  "technologies": [
-    "Software Requirements Specification",
-    "System Design Documentation",
-    "Figma Prototyping",
-    "UML Diagrams",
-    "Use Case Analysis",
-    "Entity-Relationship Diagrams"
-  ],
-  "githubLink": "https://github.com/aqeelabbaskhan41/MrDresser-Fashion",
-  "imageUrl": "https://images.pexels.com/photos/1639729/pexels-photo-1639729.jpeg",
-},
-  {
-    title: "MediTrack - Medical Store Management",
-    description: "Full-stack inventory management system with sales tracking, expiry alerts, and supplier management for pharmaceutical businesses. Focusing on DataBase management",
-    technologies: ["Flask", "MySQL", "HTML/CSS", "JavaScript", "Bootstrap"],
-    githubLink: "https://github.com/aqeelabbaskhan41/Medical-Store-System",
-    imageUrl: "https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg"
+    title: "TixTrader",
+    tag: "Full Stack",
+    description: "Full-stack ticket resale marketplace with buyer, seller, and admin workflows. JWT auth, role-based access, event listings, and purchase flows across a React frontend and Node.js REST APIs.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
+    githubLink: "",
+    imageUrl: "https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg"
   },
   {
-    title: "Obesity Level Prediction AI",
-    description: "Machine learning model predicting obesity levels with 98% accuracy. Integrated with web interface for real-time predictions based on lifestyle inputs. Also created web based dashboard to upload data file and plot different visualizations to get insights",
-    technologies: ["Python", "Scikit-learn", "Pandas", "Flask", "Matplotlib", "Seaborn"],
+    title: "Automated Essay Scoring",
+    tag: "NLP Research",
+    description: "NLP application that fine-tunes BERT for multi-dimensional essay scoring (grammar, coherence, vocabulary, content) and uses GPT to generate human-like feedback. Includes a preprocessing and tokenization pipeline plus evaluation against scoring benchmarks.",
+    technologies: ["BERT", "GPT", "PyTorch", "Hugging Face", "NLP", "Python"],
+    githubLink: "",
+    imageUrl: "https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg"
+  },
+  {
+    title: "Kohinoor Fertilizers",
+    tag: "Client Work",
+    description: "Production e-commerce site with an admin dashboard for product listing and catalog management. Built with React and Supabase as a Backend-as-a-Service for auth, database, and backend APIs.",
+    technologies: ["React.js", "Supabase (BaaS)", "Admin Dashboard"],
+    githubLink: "",
+    imageUrl: "https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg"
+  },
+  {
+    title: "Obesity Prediction System",
+    tag: "Machine Learning",
+    description: "Supervised ML system that predicts obesity levels from lifestyle and health data. Includes preprocessing, feature engineering, model evaluation, and a dashboard for data insights.",
+    technologies: ["Python", "Pandas", "NumPy", "Scikit-learn"],
     githubLink: "https://github.com/aqeelabbaskhan41/Obesity-Level-Prediction",
     imageUrl: "https://images.pexels.com/photos/6671781/pexels-photo-6671781.jpeg"
-  },
-  {
-    title: "RAG Chatbot with LLMs",
-    description: "Retrieval-Augmented Generation system  with large language models for accurate, context-aware responses. Used LLAMA 3 from Groq",
-    technologies: ["Streamlit", "LlamaIndex", 'Groq'],
-    githubLink: "https://github.com/aqeelabbaskhan41/Chatbot",
-    imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
-  },
-  {
-    title: "Real-Time Chat App (Socket.IO)",
-    description: "Full-featured messaging platform with rooms, typing indicators, and read receipts. Built with MERN stack and WebSockets for instant communication.",
-    technologies: ["React.js", "Node.js", "Socket.IO", "MongoDB", "JWT Auth"],
-    githubLink: "https://github.com/aqeelabbaskhan41/Chat-App",
-    imageUrl: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg"
-  },
-  {
-    title: "AutoVision - AI Content Pipeline",
-    description: "Automated multimedia generation pipeline using LLaMA-3 for prompt generation, Stable Diffusion for images, MoviePy and FFmpeg for video composition with background music.",
-    technologies: ["Python", "LLaMA-3", "Stable Diffusion", "FFmpeg", "Flask", "Colab"],
-    githubLink: "https://github.com/aqeelabbaskhan41/AutoVision",
-    imageUrl: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg"
   }
 ];
 
 const Projects = () => {
   return (
-    <section className="bg-gray-900 py-16 px-5 lg:py-20" id="projects">
+    <section className="relative py-12 sm:py-16 px-4 sm:px-5 lg:py-20" id="projects">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,42 +74,51 @@ const Projects = () => {
            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
             Featured <span className="text-yellow-500">Projects</span>
           </h1>
-          <div className="w-20 h-1 bg-yellow-500 mx-auto mb-4"></div>
+          <div className="accent-bar"></div>
           <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
-            A selection of my technical implementations showcasing full-stack development and AI capabilities
+            Production systems, client work, and AI platforms I have designed and shipped
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-yellow-500/30 transition-all duration-300 group"
+              className="site-card rounded-xl overflow-hidden hover:border-yellow-500/40 transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.45, delay: Math.min(index * 0.08, 0.32) }}
+              viewport={{ once: true, margin: "-40px" }}
               whileHover={{ y: -5, boxShadow: "0 10px 25px rgba(234, 179, 8, 0.15)" }}
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-40 sm:h-48 overflow-hidden relative">
                 <img
                   src={project.imageUrl}
                   alt={project.title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                {project.tag && (
+                  <span className="absolute top-3 left-3 px-3 py-1 bg-gray-900/85 text-yellow-500 text-xs font-medium rounded-full border border-yellow-500/40">
+                    {project.tag}
+                  </span>
+                )}
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                    {project.title}
-                  </a>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+                  {project.githubLink ? (
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                      {project.title}
+                    </a>
+                  ) : (
+                    project.title
+                  )}
                 </h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                
+                <p className="text-gray-400 mb-4 text-sm sm:text-base">{project.description}</p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, techIndex) => (
-                    <span 
+                    <span
                       key={techIndex}
                       className="px-3 py-1 bg-gray-700 rounded-full text-xs font-medium text-white"
                     >
@@ -118,15 +126,19 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
-                <a 
-                  href={project.githubLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-yellow-500 hover:text-yellow-400 transition-colors duration-300"
-                >
-                  <FaGithub className="mr-2" /> View on GitHub
-                </a>
+
+                {project.githubLink ? (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center min-h-[44px] text-yellow-500 hover:text-yellow-400 transition-colors duration-300"
+                  >
+                    <FaGithub className="mr-2" /> View on GitHub
+                  </a>
+                ) : (
+                  <span className="text-xs text-gray-500">Private / production codebase</span>
+                )}
               </div>
             </motion.div>
           ))}

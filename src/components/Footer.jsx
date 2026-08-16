@@ -6,7 +6,7 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <FaLinkedinIn />,
-      href: "https://www.linkedin.com/in/aqeel-abbas-khan-1061612a9",
+      href: "https://www.linkedin.com/in/aqeelabbaskhan",
       title: "LinkedIn"
     },
     {
@@ -28,9 +28,11 @@ const Footer = () => {
 
   const navLinks = [
     { name: "Home", href: "#home" },
-    { name: "Education", href: "#education" },
+    { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "Education", href: "#education" },
+    { name: "Hire Me", href: "#opportunity" },
     { name: "Contact", href: "#contact" }
   ];
 
@@ -42,11 +44,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-10 border-t border-gray-800 relative">
+    <footer className="text-white pt-12 sm:pt-16 pb-10 border-t border-yellow-500/15 relative px-4">
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="h-full w-full" style={{
-          backgroundImage: 'linear-gradient(to right, rgba(234,179,8,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(234,179,8,0.1) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(to right, rgba(212,175,55,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(212,175,55,0.1) 1px, transparent 1px)',
           backgroundSize: '40px 40px'
         }} />
       </div>
@@ -56,13 +58,13 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           {/* Call-to-action card */}
           <motion.div 
-            className="bg-gray-800 rounded-lg p-6 mb-12 w-full max-w-2xl text-center border border-gray-700"
+            className="site-card rounded-lg p-5 sm:p-6 mb-10 sm:mb-12 w-full max-w-2xl text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
               Ready to <span className="text-yellow-500">Collaborate</span>?
             </h3>
             <p className="text-gray-300 mb-6">
@@ -70,7 +72,7 @@ const Footer = () => {
             </p>
             <motion.a
               href="#contact"
-              className="inline-block px-8 py-3 bg-yellow-500 rounded-full font-medium text-gray-900"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 bg-yellow-500 rounded-full font-medium text-gray-900 shadow-gold-sm min-h-[44px]"
               whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(234, 179, 8, 0.3)" }}
               whileTap={{ scale: 0.95 }}
             >
@@ -104,7 +106,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <motion.div 
-            className="flex flex-wrap justify-center gap-4 md:gap-8 mb-10 text-gray-300"
+            className="flex flex-wrap justify-center gap-x-4 gap-y-3 md:gap-8 mb-10 text-gray-300"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -114,7 +116,7 @@ const Footer = () => {
               <motion.a 
                 key={index}
                 href={link.href}
-                className="relative py-1 px-2 group"
+                className="relative py-2 px-2 group min-h-[44px] inline-flex items-center"
                 whileHover={{ scale: 1.05 }}
               >
                 {link.name}
@@ -126,7 +128,7 @@ const Footer = () => {
           {/* Back to top */}
           <motion.button
             onClick={scrollToTop}
-            className="flex flex-col items-center text-gray-400 hover:text-yellow-500 transition-colors duration-300 mb-8"
+            className="flex flex-col items-center text-gray-400 hover:text-yellow-500 transition-colors duration-300 mb-8 min-h-[44px]"
             whileHover={{ y: -3 }}
           >
             <div className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center mb-1 hover:border-yellow-500">

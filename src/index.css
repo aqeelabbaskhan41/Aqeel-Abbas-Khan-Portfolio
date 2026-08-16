@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-gray-900 text-gray-300 antialiased font-sans;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 90% 55% at 50% -15%, rgba(212, 175, 55, 0.16), transparent 55%),
+      radial-gradient(ellipse 45% 35% at 100% 10%, rgba(212, 175, 55, 0.07), transparent 50%),
+      radial-gradient(ellipse 40% 40% at 0% 85%, rgba(70, 90, 160, 0.1), transparent 50%);
+    background-attachment: scroll;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  @media (min-width: 768px) {
+    body {
+      background-attachment: fixed;
+    }
+  }
+
+  img,
+  svg,
+  video {
+    max-width: 100%;
+  }
+
+  ::selection {
+    background: #d4af37;
+    color: #07080c;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  @media (min-width: 640px) {
+    input,
+    textarea,
+    select {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+@layer components {
+  .site-card {
+    @apply bg-gray-800/75 backdrop-blur-md border border-white/10;
+  }
+
+  .accent-bar {
+    @apply w-20 h-1 mx-auto mb-4 rounded-full;
+    background: linear-gradient(90deg, transparent, #d4af37 35%, #f3d37a 50%, #d4af37 65%, transparent);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-yellow-500 text-gray-900 text-sm font-bold rounded-full hover:bg-yellow-400 transition-colors duration-200 shadow-gold-sm min-h-[44px];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center w-full sm:w-auto gap-2 px-6 py-3 bg-gray-800/80 text-white text-sm font-medium rounded-full border border-white/10 hover:border-yellow-500 transition-colors duration-200 min-h-[44px];
+  }
+}
+
+.typed-cursor {
+  color: #d4af37 !important;
+}

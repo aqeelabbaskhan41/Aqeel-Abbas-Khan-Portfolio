@@ -20,19 +20,17 @@ const Contact = () => {
       form.current,
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
-    .then((result) => {
-      console.log('SUCCESS!', result.text);
+    .then(() => {
       setSubmitStatus({
         success: true,
-        message: 'Message sent successfully! I\'ll get back to you soon.'
+        message: 'Message sent successfully. I will get back to you soon.'
       });
       form.current.reset();
     })
-    .catch((error) => {
-      console.error('FAILED...', error.text);
+    .catch(() => {
       setSubmitStatus({
         success: false,
-        message: 'Failed to send message. Please email me directly at aqeelabbaskhan41@gmail.com'
+        message: 'Failed to send. Email me directly at aqeelabbaskhan41@gmail.com'
       });
     })
     .finally(() => {
@@ -43,7 +41,7 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <FaWhatsapp size={18} />,
-      text: "923090931916",
+      text: "+92 309 0931916",
       href: "https://wa.me/923090931916"
     },
     {
@@ -53,13 +51,13 @@ const Contact = () => {
     },
     {
       icon: <FaMapMarkerAlt size={18} />,
-      text: "Musa Khel, Mianwali, Pakistan",
-      href: "#"
+      text: "Mianwali, Pakistan",
+      href: null
     }
   ];
 
   return (
-    <section className="bg-gray-900 py-12 px-4 sm:px-6" id="contact">
+    <section className="relative py-12 sm:py-16 px-4 sm:px-6" id="contact">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -72,9 +70,9 @@ const Contact = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
             Get In <span className="text-yellow-500">Touch</span>
           </h2>
-          <div className="w-16 h-0.5 bg-yellow-500 mx-auto mb-3"></div>
+          <div className="accent-bar"></div>
           <p className="text-gray-300 text-sm">
-            Reach out for collaborations or opportunities
+            Remote or onsite roles, freelance work, or a collaboration. Send a message below.
           </p>
         </motion.div>
 
@@ -86,13 +84,13 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="bg-gray-800 rounded-lg p-5 border border-gray-700 flex flex-col h-full"
+            className="site-card rounded-lg p-4 sm:p-5 flex flex-col h-full"
           >
             <div className="mb-4 overflow-hidden rounded-lg flex justify-center">
               <img
-                src="Aqeel1.png"
+                src="Aqeel.png"
                 alt="Aqeel Abbas Khan"
-                className="h-48 w-48 object-cover rounded-full border-4 border-yellow-500 hover:scale-105 transition-transform duration-300"
+                className="h-36 w-36 sm:h-48 sm:w-48 object-cover object-top rounded-full border-4 border-yellow-500 shadow-gold-sm"
                 style={{ objectPosition: 'top center' }}
               />
             </div>
@@ -100,26 +98,37 @@ const Contact = () => {
             <h3 className="text-lg font-bold text-white text-center">
               Aqeel <span className="text-yellow-500">Abbas</span> Khan
             </h3>
-            <p className="text-gray-300 text-sm mb-4 text-center">Computer Scientist</p>
+            <p className="text-gray-300 text-sm mb-4 text-center">Software Engineer</p>
 
             <div className="space-y-3 mt-auto">
-              {contactInfo.map((item, index) => (
-                <motion.a
-                  key={index}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200 group"
-                  whileHover={{ x: 3 }}
-                >
-                  <div className="p-2 bg-gray-700 rounded-lg group-hover:bg-gray-800 transition-colors duration-200">
-                    {React.cloneElement(item.icon, { 
-                      className: "text-yellow-500 group-hover:text-yellow-400" 
-                    })}
+              {contactInfo.map((item, index) => {
+                const content = (
+                  <>
+                    <div className="p-2 bg-gray-700 rounded-lg shrink-0">
+                      {React.cloneElement(item.icon, {
+                        className: "text-yellow-500"
+                      })}
+                    </div>
+                    <span className="text-sm break-all">{item.text}</span>
+                  </>
+                );
+
+                return item.href ? (
+                  <a
+                    key={index}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200 min-h-[44px]"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div key={index} className="flex items-center gap-3 text-gray-300 min-h-[44px]">
+                    {content}
                   </div>
-                  <span className="text-xs sm:text-sm">{item.text}</span>
-                </motion.a>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
 
@@ -129,7 +138,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="bg-gray-800 rounded-lg p-5 border border-gray-700 h-full"
+            className="site-card rounded-lg p-4 sm:p-5 h-full"
           >
             <h3 className="text-lg font-bold text-white mb-4">
               Send a <span className="text-yellow-500">Message</span>
@@ -152,7 +161,7 @@ const Contact = () => {
                     type="text"
                     name="name"
                     placeholder="Your Name"
-                    className="w-full p-2.5 text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500"
+                    className="w-full p-3 text-base sm:text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500 min-h-[44px]"
                     required
                   />
                 </motion.div>
@@ -161,7 +170,7 @@ const Contact = () => {
                     type="tel"
                     name="phone"
                     placeholder="Phone Number"
-                    className="w-full p-2.5 text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500"
+                    className="w-full p-3 text-base sm:text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500 min-h-[44px]"
                   />
                 </motion.div>
               </div>
@@ -171,7 +180,7 @@ const Contact = () => {
                   type="email"
                   name="email"
                   placeholder="Email Address"
-                  className="w-full p-2.5 text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500"
+                  className="w-full p-3 text-base sm:text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500 min-h-[44px]"
                   required
                 />
               </motion.div>
@@ -181,7 +190,7 @@ const Contact = () => {
                   type="text"
                   name="subject"
                   placeholder="Subject"
-                  className="w-full p-2.5 text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500"
+                  className="w-full p-3 text-base sm:text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500 min-h-[44px]"
                   required
                 />
               </motion.div>
@@ -191,7 +200,7 @@ const Contact = () => {
                   name="message"
                   placeholder="Your Message"
                   rows="4"
-                  className="w-full p-2.5 text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500"
+                  className="w-full p-3 text-base sm:text-sm bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-yellow-500 min-h-[44px]"
                   required
                 ></textarea>
               </motion.div>
@@ -199,7 +208,7 @@ const Contact = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full py-2.5 text-sm bg-yellow-500 text-gray-900 font-bold rounded-lg flex items-center justify-center gap-2 transition-colors duration-200 ${
+                className={`w-full py-3 text-sm bg-yellow-500 text-gray-900 font-bold rounded-lg flex items-center justify-center gap-2 transition-colors duration-200 min-h-[44px] ${
                   isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-yellow-600'
                 }`}
                 whileHover={!isSubmitting ? { scale: 1.01 } : {}}

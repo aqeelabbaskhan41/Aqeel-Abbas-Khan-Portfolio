@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import { FaDownload } from "react-icons/fa";
 
 const HeroSection = () => {
   const typedRef = useRef(null);
@@ -8,9 +9,9 @@ const HeroSection = () => {
   useEffect(() => {
     const options = {
       strings: [
-        "Innovative Solutions with <span class='text-yellow-500'>Cutting-edge Tech</span>",
-        "Building <span class='text-yellow-500'>Scalable Applications</span>",
-        "Transforming Ideas into <span class='text-yellow-500'>Digital Reality</span>"
+        "Building <span class='text-yellow-500'>Production AI Systems</span>",
+        "Shipping <span class='text-yellow-500'>Full-Stack Products</span>",
+        "Designing <span class='text-yellow-500'>Scalable APIs & Pipelines</span>"
       ],
       typeSpeed: 50,
       backSpeed: 30,
@@ -31,70 +32,73 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="bg-gray-900 pt-28 pb-12 flex flex-col-reverse justify-center items-center  px-5 sm:flex-row  max-w-6xl mx-auto" id="home">
-      {/* Left Content - Now with controlled width */}
-      <div className="flex-1 text-center sm:text-left w-full sm:w-4/5 lg:w-2/3">
-        <div className="min-h-[80px] sm:min-h-[100px] md:min-h-[120px] flex items-center">
-          <h1 className="text-xl font-semibold leading-snug sm:text-3xl md:text-4xl sm:font-bold">
+    <section
+      className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 px-4 sm:px-5 flex flex-col-reverse justify-center items-center sm:flex-row max-w-6xl mx-auto w-full"
+      id="home"
+    >
+      <div className="flex-1 text-center sm:text-left w-full min-w-0 sm:pr-4">
+        <p className="mb-3 sm:mb-4 text-[10px] sm:text-xs font-medium tracking-[0.12em] sm:tracking-[0.2em] uppercase text-yellow-500/90 leading-relaxed">
+          Available for hire
+          <span className="mx-1.5 sm:mx-2.5 text-gray-600">/</span>
+          Remote
+          <span className="mx-1.5 sm:mx-2.5 text-gray-600">/</span>
+          Onsite
+          <span className="mx-1.5 sm:mx-2.5 text-gray-600">/</span>
+          Freelance
+        </p>
+        <div className="min-h-[72px] sm:min-h-[100px] md:min-h-[120px] flex items-center justify-center sm:justify-start">
+          <h1 className="text-lg xs:text-xl font-semibold leading-snug sm:text-3xl md:text-4xl sm:font-bold text-white break-words">
             <span ref={typedRef} />
           </h1>
         </div>
-        <h3 className="font-semibold text-xl mt-2 sm:text-3xl md:mt-2">
-          Aqeel <span className="text-yellow-500">Abbas</span> Khan | Full Stack Developer
-        </h3>
-        <p className="text-sm mt-3 sm:text-base md:text-lg leading-relaxed sm:mt-4 md:mt-5 max-w-prose">
-          Experienced <b>Software Developer</b> with a proven track record of designing and delivering robust, scalable applications using modern technologies. Passionate about leveraging clean code, innovative architectures, and data-driven insights to create impactful solutions.
+        <h2 className="font-semibold text-xl mt-2 sm:text-3xl md:mt-2 text-white">
+          Aqeel <span className="text-yellow-500">Abbas</span> Khan | Software Engineer
+        </h2>
+        <p className="text-sm mt-3 sm:text-base md:text-lg leading-relaxed sm:mt-4 md:mt-5 max-w-prose mx-auto sm:mx-0 text-gray-400">
+          Software Engineer building AI-powered web applications and scalable backend systems.
+          I work across React, Node.js, FastAPI, and PostgreSQL, with hands-on experience shipping
+          production features in RAG, LLM agents, and data pipelines.
         </p>
-        
-        {/* Skills Section */}
-        <div className="mt-5 md:mt-9 flex flex-col gap-3">
-  {/* First Row: Skills up to Machine Learning/AI */}
-  <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
-    {[
-      "Full Stack", "C++", "Python", "JavaScript", 
-      "React.js", "Node.js", "Flask", "Machine Learning/AI"
-    ].map((skill, index) => (
-      <span 
-        key={index}
-        className="px-3 py-2 bg-gray-800 rounded-full text-xs font-medium
-                   transition-all duration-300 hover:bg-yellow-500 hover:text-gray-900
-                   hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/30
-                   hover:cursor-pointer"
-      >
-        {skill}
-      </span>
-    ))}
-  </div>
-  {/* Second Row: Remaining skills */}
-  <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
-    {[
-      "Data Analysis", "MySQL", "MongoDB", "Tailwind", "Bootstrap"
-    ].map((skill, index) => (
-      <span 
-        key={index}
-        className="px-3 py-2 bg-gray-800 rounded-full text-xs font-medium
-                   transition-all duration-300 hover:bg-yellow-500 hover:text-gray-900
-                   hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/30
-                   hover:cursor-pointer"
-      >
-        {skill}
-      </span>
-    ))}
-  </div>
-</div>
+
+        <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3 justify-center sm:justify-start">
+          <a href="#projects" className="btn-primary">
+            View Work
+          </a>
+          <a href="#opportunity" className="btn-secondary border-yellow-500/30">
+            Hire Me
+          </a>
+          <a href="/Aqeel_Abbas_Khan_Resume.pdf" download className="btn-secondary">
+            <FaDownload className="text-yellow-500 text-xs" />
+            Resume
+          </a>
+        </div>
+
+        <div className="mt-5 md:mt-8 flex flex-wrap gap-2 sm:gap-3 justify-center sm:justify-start">
+          {[
+            "Software Engineer", "React.js", "Node.js", "Python",
+            "FastAPI", "Supabase", "LangChain", "Docker"
+          ].map((skill) => (
+            <span
+              key={skill}
+              className="px-2.5 py-1.5 sm:px-3 sm:py-2 bg-gray-800/80 border border-yellow-500/20 rounded-full text-[11px] sm:text-xs font-medium text-gray-300"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
 
-      {/* Right Image - Adjusted size */}
-      <div className="flex-shrink-0 sm:mb-0 sm:ml-6 md:ml-8 lg:ml-10">
+      <div className="relative flex-shrink-0 mb-6 sm:mb-0 sm:ml-6 md:ml-8 lg:ml-10">
+        <div className="absolute inset-0 rounded-full bg-yellow-500/25 blur-2xl scale-110"></div>
         <img
-          className="rounded-full h-44 w-44 border-4 border-yellow-500 shadow-md shadow-yellow-500 
+          className="relative rounded-full h-36 w-36 xs:h-44 xs:w-44 object-cover object-top border-4 border-yellow-500 shadow-gold
                      sm:h-52 sm:w-52 md:h-60 md:w-60 lg:h-80 lg:w-80
-                     hover:shadow-lg hover:shadow-yellow-500/50 transition-all duration-300"
+                     ring-4 ring-yellow-500/15"
           src="Aqeel.png"
-          alt="Aqeel Abbas Khan - Professional Software Developer"
+          alt="Aqeel Abbas Khan - Software Engineer"
         />
       </div>
-    </div>
+    </section>
   );
 };
 
