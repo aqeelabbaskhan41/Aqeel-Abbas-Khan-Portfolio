@@ -9,6 +9,7 @@ import Education from "./components/Education";
 import Opportunity from "./components/Opportunity";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Opportunity/>
         <Contact/>
         <Footer/>
+        <WhatsAppFloat />
       </div>
     </>
   );
